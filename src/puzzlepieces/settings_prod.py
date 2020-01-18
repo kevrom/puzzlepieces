@@ -24,7 +24,7 @@ TEMPLATE_DIRS = (
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'helpme' # os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DEBUG", default=0))
@@ -84,8 +84,8 @@ DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.mysql"),
         "NAME": os.environ.get("SQL_DATABASE", "puzzlepieces"),
-        "USER": os.environ.get("SQL_USER", "root"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "onetwo12"),
+        "USER": os.environ.get("SQL_USER", "puzzler"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "puzzling"),
         "HOST": os.environ.get("SQL_HOST", "localhost"),
         "PORT": os.environ.get("SQL_PORT", "5432"),
         "OPTIONS": {
